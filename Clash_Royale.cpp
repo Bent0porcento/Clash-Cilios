@@ -4,6 +4,7 @@
 #include <vector>
 #include "json.hpp"
 #include <locale.h>
+#include <cctype>
 
 using json = nlohmann::json; // bglh pra nn ficar escrevendo tudo o cógido
 
@@ -92,15 +93,31 @@ struct Deck
     json CartasDoDeck[8];
 };
 
+void ImprimirDeck(Deck deck)
+{
+    for (int i = 0; i < 8; i++)
+    {
+        std::cout << "Carta " << i + 1 << ": " << deck.CartasDoDeck[i]["nome"] << std::endl;
+        std::cout << "Raridade: " << deck.CartasDoDeck[i]["raridade"] << std::endl;
+    }
+}
+
 Deck CriarDeck(const json &listadecarta)
 {
     Deck novodeck;
     std::string nome;
-    std::cout << "===== Comecando Montagem de Deck =====" << std::endl;
+    int elixirT = 0;
+    double peso;
+    std::cout << "========== Comecando Montagem de Deck ==========" << std::endl;
     for (int i = 0; i < 8; i++)
     {
         std::cout << "Informe o nome da carta " << i + 1 << " do seu novo deck: " << std::endl;
-        std::cin >> nome;
+        std::getline(std::cin, nome);
+        for (char &c : nome)
+        {
+            c = tolower(c);
+        }
+
         for (const auto &c : listadecarta)
         {
             if (c["nome"] == nome)
@@ -108,7 +125,11 @@ Deck CriarDeck(const json &listadecarta)
                 novodeck.CartasDoDeck[i] = c;
             }
         }
+        elixirT += novodeck.CartasDoDeck[i]["elixir"].get<int>();
     }
+    peso = elixirT / 8;
+    ImprimirDeck(novodeck);
+    std::cout << "Peso: " << peso << std::endl;
     return novodeck;
 }
 
@@ -118,6 +139,6 @@ int main()
     json lsitaDeCartas = CarregarCartas();
 
     CriarDeck(lsitaDeCartas);
-
+    // amumu
     return 0;
 }
