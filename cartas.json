@@ -1,0 +1,688 @@
+[
+  {
+    "id": 1,
+    "nome": "Cavaleiro",
+    "raridade": "Comum",
+    "elixir": 3,
+    "tipo": "T"
+  },
+  {
+    "id": 2,
+    "nome": "Arqueiras",
+    "raridade": "Comum",
+    "elixir": 3,
+    "tipo": "T"
+  },
+  {
+    "id": 3,
+    "nome": "Goblins",
+    "raridade": "Comum",
+    "elixir": 2,
+    "tipo": "T"
+  },
+  {
+    "id": 4,
+    "nome": "Goblins Lanceiros",
+    "raridade": "Comum",
+    "elixir": 2,
+    "tipo": "T"
+  },
+  {
+    "id": 5,
+    "nome": "Esqueletos",
+    "raridade": "Comum",
+    "elixir": 1,
+    "tipo": "T"
+  },
+  {
+    "id": 6,
+    "nome": "Servos",
+    "raridade": "Comum",
+    "elixir": 3,
+    "tipo": "T"
+  },
+  {
+    "id": 7,
+    "nome": "Horda de Servos",
+    "raridade": "Comum",
+    "elixir": 5,
+    "tipo": "T"
+  },
+  {
+    "id": 8,
+    "nome": "Bombardeiro",
+    "raridade": "Comum",
+    "elixir": 2,
+    "tipo": "T"
+  },
+  {
+    "id": 9,
+    "nome": "Bárbaros",
+    "raridade": "Comum",
+    "elixir": 5,
+    "tipo": "T"
+  },
+  {
+    "id": 10,
+    "nome": "Bárbaros de Elite",
+    "raridade": "Comum",
+    "elixir": 6,
+    "tipo": "T"
+  },
+  {
+    "id": 11,
+    "nome": "Canhão",
+    "raridade": "Comum",
+    "elixir": 3,
+    "tipo": "C"
+  },
+  {
+    "id": 12,
+    "nome": "Tesla",
+    "raridade": "Comum",
+    "elixir": 4,
+    "tipo": "C"
+  },
+  {
+    "id": 13,
+    "nome": "Morteiro",
+    "raridade": "Comum",
+    "elixir": 4,
+    "tipo": "C"
+  },
+  {
+    "id": 14,
+    "nome": "Zap",
+    "raridade": "Comum",
+    "elixir": 2,
+    "tipo": "F"
+  },
+  {
+    "id": 15,
+    "nome": "Flechas",
+    "raridade": "Comum",
+    "elixir": 3,
+    "tipo": "F"
+  },
+  {
+    "id": 16,
+    "nome": "Espírito de Gelo",
+    "raridade": "Comum",
+    "elixir": 1,
+    "tipo": "T"
+  },
+  {
+    "id": 17,
+    "nome": "Espírito de Fogo",
+    "raridade": "Comum",
+    "elixir": 1,
+    "tipo": "T"
+  },
+  {
+    "id": 18,
+    "nome": "Espírito Elétrico",
+    "raridade": "Comum",
+    "elixir": 1,
+    "tipo": "T"
+  },
+  {
+    "id": 19,
+    "nome": "Morcegos",
+    "raridade": "Comum",
+    "elixir": 2,
+    "tipo": "T"
+  },
+  {
+    "id": 20,
+    "nome": "Bola de Neve Gigante",
+    "raridade": "Comum",
+    "elixir": 2,
+    "tipo": "F"
+  },
+  {
+    "id": 21,
+    "nome": "Incomenda Real",
+    "raridade": "Comum",
+    "elixir": 3,
+    "tipo": "F"
+  },
+  {
+    "id": 22,
+    "nome": "Recrutas Reais",
+    "raridade": "Comum",
+    "elixir": 7,
+    "tipo": "T"
+  },
+  {
+    "id": 23,
+    "nome": "Gigante",
+    "raridade": "Rara",
+    "elixir": 5,
+    "tipo": "T"
+  },
+  {
+    "id": 24,
+    "nome": "Gigante Real",
+    "raridade": "Rara",
+    "elixir": 6,
+    "tipo": "T"
+  },
+  {
+    "id": 25,
+    "nome": "Corredor",
+    "raridade": "Rara",
+    "elixir": 4,
+    "tipo": "T"
+  },
+  {
+    "id": 26,
+    "nome": "Valquíria",
+    "raridade": "Rara",
+    "elixir": 4,
+    "tipo": "T"
+  },
+  {
+    "id": 27,
+    "nome": "Mosqueteira",
+    "raridade": "Rara",
+    "elixir": 4,
+    "tipo": "T"
+  },
+  {
+    "id": 28,
+    "nome": "Mini P.E.K.K.A.",
+    "raridade": "Rara",
+    "elixir": 4,
+    "tipo": "T"
+  },
+  {
+    "id": 29,
+    "nome": "Mago",
+    "raridade": "Rara",
+    "elixir": 5,
+    "tipo": "T"
+  },
+  {
+    "id": 30,
+    "nome": "Bola de Fogo",
+    "raridade": "Rara",
+    "elixir": 4,
+    "tipo": "F"
+  },
+  {
+    "id": 31,
+    "nome": "Foguete",
+    "raridade": "Rara",
+    "elixir": 6,
+    "tipo": "F"
+  },
+  {
+    "id": 32,
+    "nome": "Cabana de Goblins",
+    "raridade": "Rara",
+    "elixir": 5,
+    "tipo": "C"
+  },
+  {
+    "id": 33,
+    "nome": "Cabana de Bárbaros",
+    "raridade": "Rara",
+    "elixir": 6,
+    "tipo": "C"
+  },
+  {
+    "id": 34,
+    "nome": "Fornalha",
+    "raridade": "Rara",
+    "elixir": 4,
+    "tipo": "C"
+  },
+  {
+    "id": 35,
+    "nome": "Lápide",
+    "raridade": "Rara",
+    "elixir": 3,
+    "tipo": "C"
+  },
+  {
+    "id": 36,
+    "nome": "Torre Inferno",
+    "raridade": "Rara",
+    "elixir": 5,
+    "tipo": "C"
+  },
+  {
+    "id": 37,
+    "nome": "Coletor de Elixir",
+    "raridade": "Rara",
+    "elixir": 6,
+    "tipo": "C"
+  },
+  {
+    "id": 38,
+    "nome": "Três Mosqueteiras",
+    "raridade": "Rara",
+    "elixir": 9,
+    "tipo": "T"
+  },
+  {
+    "id": 39,
+    "nome": "Megasservo",
+    "raridade": "Rara",
+    "elixir": 3,
+    "tipo": "T"
+  },
+  {
+    "id": 40,
+    "nome": "Golem de Gelo",
+    "raridade": "Rara",
+    "elixir": 2,
+    "tipo": "T"
+  },
+  {
+    "id": 41,
+    "nome": "Aríete de Batalha",
+    "raridade": "Rara",
+    "elixir": 4,
+    "tipo": "T"
+  },
+  {
+    "id": 42,
+    "nome": "Curadora Guerreira",
+    "raridade": "Rara",
+    "elixir": 4,
+    "tipo": "T"
+  },
+  {
+    "id": 43,
+    "nome": "Domadora de Cordeiro",
+    "raridade": "Rara",
+    "elixir": 5,
+    "tipo": "T"
+  },
+  {
+    "id": 44,
+    "nome": "Porcos Reais",
+    "raridade": "Rara",
+    "elixir": 5,
+    "tipo": "T"
+  },
+  {
+    "id": 45,
+    "nome": "Máquina Voadora",
+    "raridade": "Rara",
+    "elixir": 4,
+    "tipo": "T"
+  },
+  {
+    "id": 46,
+    "nome": "Zappies",
+    "raridade": "Rara",
+    "elixir": 4,
+    "tipo": "T"
+  },
+  {
+    "id": 47,
+    "nome": "Feitiço de Cura",
+    "raridade": "Rara",
+    "elixir": 1,
+    "tipo": "F"
+  },
+  {
+    "id": 48,
+    "nome": "Terremoto",
+    "raridade": "Rara",
+    "elixir": 3,
+    "tipo": "F"
+  },
+  {
+    "id": 49,
+    "nome": "Príncipe",
+    "raridade": "Épica",
+    "elixir": 5,
+    "tipo": "T"
+  },
+  {
+    "id": 50,
+    "nome": "Príncipe das Trevas",
+    "raridade": "Épica",
+    "elixir": 4,
+    "tipo": "T"
+  },
+  {
+    "id": 51,
+    "nome": "Bruxa",
+    "raridade": "Épica",
+    "elixir": 5,
+    "tipo": "T"
+  },
+  {
+    "id": 52,
+    "nome": "Balão",
+    "raridade": "Épica",
+    "elixir": 5,
+    "tipo": "T"
+  },
+  {
+    "id": 53,
+    "nome": "Exército de Esqueletos",
+    "raridade": "Épica",
+    "elixir": 3,
+    "tipo": "T"
+  },
+  {
+    "id": 54,
+    "nome": "Gigante Esqueleto",
+    "raridade": "Épica",
+    "elixir": 6,
+    "tipo": "T"
+  },
+  {
+    "id": 55,
+    "nome": "P.E.K.K.A.",
+    "raridade": "Épica",
+    "elixir": 7,
+    "tipo": "T"
+  },
+  {
+    "id": 56,
+    "nome": "Golem",
+    "raridade": "Épica",
+    "elixir": 8,
+    "tipo": "T"
+  },
+  {
+    "id": 57,
+    "nome": "Caçador",
+    "raridade": "Épica",
+    "elixir": 4,
+    "tipo": "T"
+  },
+  {
+    "id": 58,
+    "nome": "Executor",
+    "raridade": "Épica",
+    "elixir": 5,
+    "tipo": "T"
+  },
+  {
+    "id": 59,
+    "nome": "Lançador",
+    "raridade": "Épica",
+    "elixir": 5,
+    "tipo": "T"
+  },
+  {
+    "id": 60,
+    "nome": "Carrinho de Canhão",
+    "raridade": "Épica",
+    "elixir": 5,
+    "tipo": "T"
+  },
+  {
+    "id": 61,
+    "nome": "X-Besta",
+    "raridade": "Épica",
+    "elixir": 6,
+    "tipo": "C"
+  },
+  {
+    "id": 62,
+    "nome": "Relâmpago",
+    "raridade": "Épica",
+    "elixir": 6,
+    "tipo": "F"
+  },
+  {
+    "id": 63,
+    "nome": "Gelo",
+    "raridade": "Épica",
+    "elixir": 4,
+    "tipo": "F"
+  },
+  {
+    "id": 64,
+    "nome": "Fúria",
+    "raridade": "Épica",
+    "elixir": 2,
+    "tipo": "F"
+  },
+  {
+    "id": 65,
+    "nome": "Veneno",
+    "raridade": "Épica",
+    "elixir": 4,
+    "tipo": "F"
+  },
+  {
+    "id": 66,
+    "nome": "Tornado",
+    "raridade": "Épica",
+    "elixir": 3,
+    "tipo": "F"
+  },
+  {
+    "id": 67,
+    "nome": "Clone",
+    "raridade": "Épica",
+    "elixir": 3,
+    "tipo": "F"
+  },
+  {
+    "id": 68,
+    "nome": "Espelho",
+    "raridade": "Épica",
+    "elixir": "Variável",
+    "tipo": "F"
+  },
+  {
+    "id": 69,
+    "nome": "Barril de Goblins",
+    "raridade": "Épica",
+    "elixir": 3,
+    "tipo": "F"
+  },
+  {
+    "id": 70,
+    "nome": "Gangue de Goblins",
+    "raridade": "Épica",
+    "elixir": 3,
+    "tipo": "T"
+  },
+  {
+    "id": 71,
+    "nome": "Guarda",
+    "raridade": "Épica",
+    "elixir": 3,
+    "tipo": "T"
+  },
+  {
+    "id": 72,
+    "nome": "Quebra-Muros",
+    "raridade": "Épica",
+    "elixir": 2,
+    "tipo": "T"
+  },
+  {
+    "id": 73,
+    "nome": "Jaula de Goblin",
+    "raridade": "Épica",
+    "elixir": 4,
+    "tipo": "C"
+  },
+  {
+    "id": 74,
+    "nome": "Goblin Gigante",
+    "raridade": "Épica",
+    "elixir": 6,
+    "tipo": "T"
+  },
+  {
+    "id": 75,
+    "nome": "Broca de Goblin",
+    "raridade": "Épica",
+    "elixir": 4,
+    "tipo": "C"
+  },
+  {
+    "id": 76,
+    "nome": "Bruxa Mãe",
+    "raridade": "Lendária",
+    "elixir": 4,
+    "tipo": "T"
+  },
+  {
+    "id": 77,
+    "nome": "Mago de Gelo",
+    "raridade": "Lendária",
+    "elixir": 3,
+    "tipo": "T"
+  },
+  {
+    "id": 78,
+    "nome": "Mago Elétrico",
+    "raridade": "Lendária",
+    "elixir": 4,
+    "tipo": "T"
+  },
+  {
+    "id": 79,
+    "nome": "Princesa",
+    "raridade": "Lendária",
+    "elixir": 3,
+    "tipo": "T"
+  },
+  {
+    "id": 80,
+    "nome": "Mineiro",
+    "raridade": "Lendária",
+    "elixir": 3,
+    "tipo": "T"
+  },
+  {
+    "id": 81,
+    "nome": "O Tronco",
+    "raridade": "Lendária",
+    "elixir": 2,
+    "tipo": "F"
+  },
+  {
+    "id": 82,
+    "nome": "Cemitério",
+    "raridade": "Lendária",
+    "elixir": 5,
+    "tipo": "F"
+  },
+  {
+    "id": 83,
+    "nome": "Lava Hound",
+    "raridade": "Lendária",
+    "elixir": 7,
+    "tipo": "T"
+  },
+  {
+    "id": 84,
+    "nome": "Dragão Infernal",
+    "raridade": "Lendária",
+    "elixir": 4,
+    "tipo": "T"
+  },
+  {
+    "id": 85,
+    "nome": "Sparky",
+    "raridade": "Lendária",
+    "elixir": 6,
+    "tipo": "T"
+  },
+  {
+    "id": 86,
+    "nome": "Megacavaleiro",
+    "raridade": "Lendária",
+    "elixir": 7,
+    "tipo": "T"
+  },
+  {
+    "id": 87,
+    "nome": "Lenhador",
+    "raridade": "Lendária",
+    "elixir": 4,
+    "tipo": "T"
+  },
+  {
+    "id": 88,
+    "nome": "Fantasma Real",
+    "raridade": "Lendária",
+    "elixir": 3,
+    "tipo": "T"
+  },
+  {
+    "id": 89,
+    "nome": "Bandida",
+    "raridade": "Lendária",
+    "elixir": 3,
+    "tipo": "T"
+  },
+  {
+    "id": 90,
+    "nome": "Arquiro Mágico",
+    "raridade": "Lendária",
+    "elixir": 4,
+    "tipo": "T"
+  },
+  {
+    "id": 91,
+    "nome": "Pescador",
+    "raridade": "Lendária",
+    "elixir": 3,
+    "tipo": "T"
+  },
+  {
+    "id": 92,
+    "nome": "Fênix",
+    "raridade": "Lendária",
+    "elixir": 4,
+    "tipo": "T"
+  },
+  {
+    "id": 93,
+    "nome": "Rei Esqueleto",
+    "raridade": "Campeão",
+    "elixir": 4,
+    "tipo": "T"
+  },
+  {
+    "id": 94,
+    "nome": "Rainha Arqueira",
+    "raridade": "Campeão",
+    "elixir": 5,
+    "tipo": "T"
+  },
+  {
+    "id": 95,
+    "nome": "Cavaleiro Dourado",
+    "raridade": "Campeão",
+    "elixir": 4,
+    "tipo": "T"
+  },
+  {
+    "id": 96,
+    "nome": "Mineiro Poderoso",
+    "raridade": "Campeão",
+    "elixir": 4,
+    "tipo": "T"
+  },
+  {
+    "id": 97,
+    "nome": "Monge",
+    "raridade": "Campeão",
+    "elixir": 5,
+    "tipo": "T"
+  },
+  {
+    "id": 98,
+    "nome": "Pequeno Príncipe",
+    "raridade": "Campeão",
+    "elixir": 3,
+    "tipo": "T"
+  }
+]
