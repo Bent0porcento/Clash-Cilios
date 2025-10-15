@@ -130,12 +130,36 @@ Deck CriarDeck(const json &listadecarta)
         {
             c = tolower(c);
         }
-
-        for (const auto &c : listadecarta)
+        novodeck.CartasDoDeck[i] = ProcurarCarta(listadecarta, nome);
+        if (novodeck.CartasDoDeck[i] == json())
         {
-            if (c["nome"] == nome)
+            while (novodeck.CartasDoDeck[i] == json())
             {
-                novodeck.CartasDoDeck[i] = c;
+                std::cout << "Insira novamente a carta " << i + 1 << " do seu deck: " << std::endl;
+                std::getline(std::cin, nome);
+                for (char &c : nome)
+                {
+                    c = tolower(c);
+                }
+                novodeck.CartasDoDeck[i] = ProcurarCarta(listadecarta, nome);
+            }
+        }
+
+        for (int j = 0; j < i; j++)
+        {
+            if (novodeck.CartasDoDeck[i] == novodeck.CartasDoDeck[j])
+            {
+                std::cout << "Voce ja possui essa carta em seu deck!" << std::endl;
+                while (novodeck.CartasDoDeck[i] == novodeck.CartasDoDeck[j])
+                {
+                    std::cout << "Insira novamente a carta " << i + 1 << " do seu deck: " << std::endl;
+                    std::getline(std::cin, nome);
+                    for (char &c : nome)
+                    {
+                        c = tolower(c);
+                    }
+                    novodeck.CartasDoDeck[i] = ProcurarCarta(listadecarta, nome);
+                }
             }
         }
     }
@@ -181,7 +205,7 @@ int main()
 
     json lsitaDeCartas = CarregarCartas();
 
-    GerarXBesta(lsitaDeCartas);
+    CriarDeck(lsitaDeCartas);
 
     return 0;
 }
