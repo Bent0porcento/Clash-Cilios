@@ -91,15 +91,28 @@ void ImprimirCarta(const json &carta)
 struct Deck
 {
     json CartasDoDeck[8];
+    double peso;
 };
 
-void ImprimirDeck(Deck deck)
+void ImprimirDeck(Deck &deck)
 {
     for (int i = 0; i < 8; i++)
     {
         std::cout << "Carta " << i + 1 << ": " << deck.CartasDoDeck[i]["nome"] << std::endl;
-        std::cout << "Raridade: " << deck.CartasDoDeck[i]["raridade"] << std::endl;
     }
+    std::cout << "Peso: " << deck.peso << std::endl;
+}
+
+void CalculaPeso(Deck &deck)
+{
+    int elixirT = 0;
+    double peso;
+    for (int i = 0; i < 8; i++)
+    {
+        elixirT += deck.CartasDoDeck[i]["elixir"].get<int>();
+    }
+    peso = elixirT / 8.0;
+    deck.peso = (std::round(peso * 10.0)) / 10.0;
 }
 
 Deck CriarDeck(const json &listadecarta)
@@ -125,20 +138,50 @@ Deck CriarDeck(const json &listadecarta)
                 novodeck.CartasDoDeck[i] = c;
             }
         }
-        elixirT += novodeck.CartasDoDeck[i]["elixir"].get<int>();
     }
-    peso = elixirT / 8;
+    CalculaPeso(novodeck);
     ImprimirDeck(novodeck);
-    std::cout << "Peso: " << peso << std::endl;
     return novodeck;
+}
+
+Deck GerarLogBait(const json &listadecartas)
+{
+    Deck logbait;
+    logbait.CartasDoDeck[0] = ProcurarCarta(listadecartas, "cavaleiro");
+    logbait.CartasDoDeck[1] = ProcurarCarta(listadecartas, "barril de goblins");
+    logbait.CartasDoDeck[2] = ProcurarCarta(listadecartas, "torre inferno");
+    logbait.CartasDoDeck[3] = ProcurarCarta(listadecartas, "foguete");
+    logbait.CartasDoDeck[4] = ProcurarCarta(listadecartas, "o tronco");
+    logbait.CartasDoDeck[5] = ProcurarCarta(listadecartas, "princesa");
+    logbait.CartasDoDeck[6] = ProcurarCarta(listadecartas, "gangue de goblins");
+    logbait.CartasDoDeck[7] = ProcurarCarta(listadecartas, "espirito de gelo");
+    CalculaPeso(logbait);
+    ImprimirDeck(logbait);
+    return logbait;
+}
+
+Deck GerarXBesta(const json &listadecartas)
+{
+    Deck Xbesta;
+    Xbesta.CartasDoDeck[0] = ProcurarCarta(listadecartas, "cavaleiro");
+    Xbesta.CartasDoDeck[1] = ProcurarCarta(listadecartas, "x-besta");
+    Xbesta.CartasDoDeck[2] = ProcurarCarta(listadecartas, "tesla");
+    Xbesta.CartasDoDeck[3] = ProcurarCarta(listadecartas, "mago de gelo");
+    Xbesta.CartasDoDeck[4] = ProcurarCarta(listadecartas, "o tronco");
+    Xbesta.CartasDoDeck[5] = ProcurarCarta(listadecartas, "foguete");
+    Xbesta.CartasDoDeck[6] = ProcurarCarta(listadecartas, "esqueletos");
+    Xbesta.CartasDoDeck[7] = ProcurarCarta(listadecartas, "tornado");
+    CalculaPeso(Xbesta);
+    ImprimirDeck(Xbesta);
+    return Xbesta;
 }
 
 int main()
 {
-    setlocale(LC_ALL, "Portuguese_Brazil");
+
     json lsitaDeCartas = CarregarCartas();
 
-    CriarDeck(lsitaDeCartas);
-    // amumu
+    GerarXBesta(lsitaDeCartas);
+
     return 0;
 }

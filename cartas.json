@@ -684,5 +684,12 @@
     "raridade": "campeao",
     "elixir": 3,
     "tipo": "t"
+  },
+    {
+    "id": 99,
+    "nome": "barril de barbaro",
+    "raridade": "epica",
+    "elixir": 2,
+    "tipo": "f"
   }
 ]
