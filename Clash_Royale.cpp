@@ -6,13 +6,13 @@
 #include <locale.h>
 #include <cctype>
 
-using json = nlohmann::json; // bglh pra nn ficar escrevendo tudo o cógido
+using json = nlohmann::json; // Paricido com std, serve pra não ficar escrevendo nlohmann::json toda vez quer quiser usar o tipo json
 
 json CarregarCartas()
 {
     std::ifstream arquivo_json("cartas.json"); // abrir o json
 
-    if (!arquivo_json.is_open()) // verificar se deu certo
+    if (!arquivo_json.is_open()) // verificar se deu certo a abertura
     {
         std::cerr << "Erro: Nao foi possivel abrir o arquivo cartas.json" << std::endl;
         return json();
@@ -21,63 +21,51 @@ json CarregarCartas()
     json dados_cartas; // parsear as cartas
     try
     {
-        arquivo_json >> dados_cartas; // le os dadps pra colocar no array
+        arquivo_json >> dados_cartas; // le os dados pra colocar na nossa variavel dados_cartas
     }
-    catch (json::parse_error &e)
+    catch (json::parse_error &e) // verificacao para erro na hora do parse
     {
         std::cerr << "Erro de parse no JSON: " << e.what() << std::endl;
         return json();
     }
-    return dados_cartas;
+    return dados_cartas; // retona pra gente o dodos_cartas, equivalente a lista de cartas
 }
 
-void ImprimirCartas(const json &c)
+void ImprimirCartas(const json &listadecartas) // exige que passamos um json para poder ler, no nosso caso é o json com as cartas
 {
     std::cout << "--- Catalogo de Cartas do Clash Royale ---" << std::endl
               << std::endl;
 
-    for (const auto &carta : c) // imprime as carta de acordo com as infomarções que ele puxa do json
+    for (const auto &carta : listadecartas) // imprime as carta de acordo com as infomarções que ele puxa do json
     {
 
-        int id = carta["id"];
-        std::string nome = carta["nome"];
+        int id = carta["id"];             // guarda cada informação das cartas em uma variavel para imprimir dps
+        std::string nome = carta["nome"]; // talvez daria pra imprimir direto sem colocar em uma variavel mas n tenho certeza
         std::string raridade = carta["raridade"];
         std::string tipo = carta["tipo"];
 
         std::cout << "ID: " << id << std::endl;
-        std::cout << "Nome: " << nome << std::endl;
-
-        if (carta["elixir"].is_number()) // verificação do elixir pq o espelho nn tem elixir fixo
-        {
-            int elixir = carta["elixir"];
-            std::cout << "Elixir: " << elixir << std::endl;
-        }
-        else
-        {
-            std::string elixir_str = carta["elixir"];
-            std::cout << "Elixir: " << elixir_str << std::endl;
-        }
-
+        std::cout << "Nome: " << nome << std::endl; // impressões
         std::cout << "Raridade: " << raridade << std::endl;
         std::cout << "Tipo: " << tipo << std::endl;
         std::cout << "----------------------------------------" << std::endl;
     }
 }
 
-json ProcurarCarta(const json &listadecartas, std::string n)
+json ProcurarCarta(const json &listadecartas, std::string n) // exige a lista de carta e uma string, essa string é o nome da carta que a gente quer
 {
-    for (const auto &c : listadecartas)
+    for (const auto &c : listadecartas) // percorre todo o array
     {
         if (c["nome"] == n)
         {
-            return c;
+            return c; // quando acha a carta que tem o nome igual, retorna ela saindo do looping
         }
     }
     std::cout << "Impossivel Encontrar sua carta" << std::endl;
-    return json();
+    return json(); // se nao achar a carta retorna um jason vazio
 }
 
-void ImprimirCarta(const json &carta)
+void ImprimirCarta(const json &carta) // pede somente uma carta e imprime suas informações
 {
     std::cout << "ID: " << carta["id"] << std::endl;
     std::cout << "Nome: " << carta["nome"] << std::endl;
@@ -94,7 +82,7 @@ struct Deck
     double peso;
 };
 
-void ImprimirDeck(Deck &deck)
+void ImprimirDeck(Deck &deck) // pede um deck e imprime as informações dele
 {
     for (int i = 0; i < 8; i++)
     {
@@ -103,37 +91,35 @@ void ImprimirDeck(Deck &deck)
     std::cout << "Peso: " << deck.peso << std::endl;
 }
 
-void CalculaPeso(Deck &deck)
+void CalculaPeso(Deck &deck) // pede um deck e calcula o peso dele
 {
     int elixirT = 0;
     double peso;
     for (int i = 0; i < 8; i++)
     {
-        elixirT += deck.CartasDoDeck[i]["elixir"].get<int>();
-    }
-    peso = elixirT / 8.0;
-    deck.peso = (std::round(peso * 10.0)) / 10.0;
+        elixirT += deck.CartasDoDeck[i]["elixir"].get<int>(); // soma o elixir de cada carta acessando elas pelo array dentro do struct
+    } // o programa nn consegue supor que o elexir é do tipo int,
+    peso = elixirT / 8.0;                         // mesmo que no json ele esteja como int, por isso que tem q ter um cast pra int com o get<int>
+    deck.peso = (std::round(peso * 10.0)) / 10.0; // faz com que fique com uma casa decimal, multiplicando por 10 primeiro e arredondando, depois divide pra voltar
 }
 
-Deck CriarDeck(const json &listadecarta)
+Deck CriarDeck(const json &listadecarta) // passa a lista de carta e começa o processo pra criar o deck
 {
     Deck novodeck;
     std::string nome;
-    int elixirT = 0;
-    double peso;
     std::cout << "========== Comecando Montagem de Deck ==========" << std::endl;
     for (int i = 0; i < 8; i++)
     {
         std::cout << "Informe o nome da carta " << i + 1 << " do seu novo deck: " << std::endl;
-        std::getline(std::cin, nome);
-        for (char &c : nome)
+        std::getline(std::cin, nome); // pega a linha toda e não só a proxima palavra
+        for (char &c : nome)          // for each passando por todas as letras do nome passado pra deixar elas em minusculo
         {
             c = tolower(c);
         }
-        novodeck.CartasDoDeck[i] = ProcurarCarta(listadecarta, nome);
-        if (novodeck.CartasDoDeck[i] == json())
+        novodeck.CartasDoDeck[i] = ProcurarCarta(listadecarta, nome); // usa o método de procurar carta pra armazenar no array de cartas do deck
+        if (novodeck.CartasDoDeck[i] == json())                       // verificação caso passe uma json nulo
         {
-            while (novodeck.CartasDoDeck[i] == json())
+            while (novodeck.CartasDoDeck[i] == json()) // repete o processo até não ser mais um json vaizo
             {
                 std::cout << "Insira novamente a carta " << i + 1 << " do seu deck: " << std::endl;
                 std::getline(std::cin, nome);
@@ -145,9 +131,9 @@ Deck CriarDeck(const json &listadecarta)
             }
         }
 
-        for (int j = 0; j < i; j++)
+        for (int j = 0; j < i; j++) // percorre o deck e verifica se tem carta repitida
         {
-            if (novodeck.CartasDoDeck[i] == novodeck.CartasDoDeck[j])
+            if (novodeck.CartasDoDeck[i] == novodeck.CartasDoDeck[j]) // se tiver repete até não ter
             {
                 std::cout << "Voce ja possui essa carta em seu deck!" << std::endl;
                 while (novodeck.CartasDoDeck[i] == novodeck.CartasDoDeck[j])
@@ -163,9 +149,9 @@ Deck CriarDeck(const json &listadecarta)
             }
         }
     }
-    CalculaPeso(novodeck);
-    ImprimirDeck(novodeck);
-    return novodeck;
+    CalculaPeso(novodeck);  // atribui o peso ao deck
+    ImprimirDeck(novodeck); // imprime ele
+    return novodeck;        // retorna ele
 }
 
 Deck GerarLogBait(const json &listadecartas)
@@ -204,7 +190,6 @@ int main()
 {
 
     json lsitaDeCartas = CarregarCartas();
-
     CriarDeck(lsitaDeCartas);
 
     return 0;
